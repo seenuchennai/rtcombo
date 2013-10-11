@@ -1,0 +1,95 @@
+﻿<Window x:Class="Shubharealtime.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Shubha Real time " Height="612" Width="746" Loaded="Window_Loaded" Background="#FFE9E9F5" WindowStartupLocation="CenterScreen" Closed="Window_Closed">
+    <Grid>
+        <TabControl Height="579" HorizontalAlignment="Left" Margin="4,1,0,0" Name="tabControl1" VerticalAlignment="Top" Width="714">
+            <TabItem Header="Home" Name="tabItem1">
+                <Grid Name="exchang" Background="#FFE9E9F5" Margin="0,-4,0,4" Width="702">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="14*" />
+                        <ColumnDefinition Width="687*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="5,549,0,0" Name="textBlock2" Text="This program comes with ABSOLUTELY NO WARRANTY." VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="5,510,0,0" Name="textBlock3" Text="This software (released under GNU GPL V3) and you are welcome to redistribute it under certain conditions as per " VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                    <WebBrowser Name="wad1" LoadCompleted="wb_LoadCompleted" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.IsDeferredScrollingEnabled="False" Width="120" VerticalAlignment="Stretch" Height="148" HorizontalAlignment="Center" Margin="562,354,6,152" Grid.Column="1"></WebBrowser>
+                    <WebBrowser Name="wad2" LoadCompleted="wb_LoadCompleted" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.IsDeferredScrollingEnabled="False" Width="120" VerticalAlignment="Stretch" Height="148" HorizontalAlignment="Center" Margin="562,181,6,244" Grid.Column="1"></WebBrowser>
+                    <WebBrowser Name="wad3" LoadCompleted="wb_LoadCompleted" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.IsDeferredScrollingEnabled="False" Width="120" VerticalAlignment="Stretch" Height="148" HorizontalAlignment="Center" Margin="562,11,6,414" Grid.Column="1"></WebBrowser>
+                    <Image Height="120" HorizontalAlignment="Left" Margin="6,383,0,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Width="561" Source="Images/home_banner1.jpg" Grid.ColumnSpan="2" />
+                    <TextBox Height="23" HorizontalAlignment="Right"  Margin="0,109,418,0" Name="txtTargetFolder" VerticalAlignment="Top" Width="129" Grid.Column="1" Text="C:\myshubhalabha" IsReadOnly="True" />
+                    <Button Content="Ami database path" Height="25" HorizontalAlignment="Left" Margin="5,6,0,0" Name="btnTarget" VerticalAlignment="Top" Width="110" Click="btnTarget_Click" Grid.ColumnSpan="2" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="140,165,0,0" Name="timetoRT" VerticalAlignment="Top" Width="130" SelectedIndex="0" Grid.Column="1" />
+                    <Label Content="Set refresh rate in sec  " Height="28" HorizontalAlignment="Left" Margin="4,164,0,0" Name="label5" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="140,224,0,0" Name="RTD_server_name" VerticalAlignment="Top" Width="130" SelectedIndex="0" Grid.Column="1" />
+                    <Label Content=" Select Terminal " Height="28" HorizontalAlignment="Left" Margin="1,224,0,0" Name="label8" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                    <Label Content="Select charting application" Height="28" HorizontalAlignment="Left" Margin="3,136,0,0" Name="label9" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="140,136,0,0" Name="Format_cb" VerticalAlignment="Top" Width="130" Grid.Column="1" />
+                    <TextBox Height="23" HorizontalAlignment="Right" Margin="0,41,418,0" Name="symbolname_txt" VerticalAlignment="Top" Width="130" Grid.Column="1" ToolTip=" For google back fill Please add both symbols in respective fields and after that click on Add symbol button’" />
+                    <ComboBox Height="23" HorizontalAlignment="Right" Margin="0,40,255,0" Name="exchangename_cb" VerticalAlignment="Top" Width="99" Grid.Column="1" />
+                    <Label Content="Enter trading symbol name " Height="28" HorizontalAlignment="Left" Margin="5,39,0,0" Name="label1" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                    <Label Content="Exchange " Height="28" HorizontalAlignment="Left" Margin="276,37,0,0" Name="label2" VerticalAlignment="Top" Grid.Column="1" />
+                    <Button Content="Add  Symbol" Height="23" Name="Add_Symbol" Margin="0,39,153,486" Click="Add_Symbol_Click" Grid.Column="1" HorizontalAlignment="Right" Width="86" />
+                    <Button Content="Save" Height="23" Name="save_btn" Margin="449,4,153,521" Click="button1_Click" Grid.Column="1" Visibility="Visible" />
+                    <Label Content="Hours" Height="28" HorizontalAlignment="Left" Margin="5,472,0,0" Name="lbl_GHours" VerticalAlignment="Top" Visibility="Hidden" Grid.ColumnSpan="2" />
+                    <Label Content="Minutes" Height="28" HorizontalAlignment="Left" Margin="196,472,0,0" Name="lbl_GMinutes" VerticalAlignment="Top" Visibility="Hidden" Grid.Column="1" />
+                    <Label Content="Days For Google IEOD" Height="28" HorizontalAlignment="Left" Margin="4,192,0,0" Name="lbl_Days_For_Google_EOD" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="141,6,0,0" Name="db_path" VerticalAlignment="Top" Width="291" Grid.Column="1" Text="C:\myshubhalabha\amirealtime" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="140,194,0,0" Name="Daysforgoogle" VerticalAlignment="Top" Width="130" SelectedIndex="5" Grid.Column="1" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="35,472,0,0" Name="GHRS" VerticalAlignment="Top" Width="117" SelectedIndex="5" Visibility="Hidden" Grid.Column="1" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="250,472,0,0" Name="GMIN" VerticalAlignment="Top" Width="120" SelectedIndex="30" Visibility="Hidden" Grid.Column="1" />
+                    <CheckBox Content="Amibroker auto backfill" Height="16" Margin="7,289,0,0" Name="ChkGoogleIEOD" HorizontalAlignment="Left" VerticalAlignment="Top" Command="{Binding Path=IsCheckBoxClicked}"  CommandParameter="ChkGoogleIEOD" Grid.ColumnSpan="2" />
+                    <Button Content="Start RT" Height="23" Name="StartRT" Width="73" Click="StartRT_Click" Margin="7,328,0,197" HorizontalAlignment="Left" Grid.ColumnSpan="2" />
+                    <Button Content="Close" Height="23" Name="close_btn" Margin="0,328,418,197" Click="close_btn_Click" Grid.Column="1" HorizontalAlignment="Right" Width="80" />
+                    <Label Content="Enter Google symbol name " Height="28" HorizontalAlignment="Left" Margin="4,73,0,0" Name="label3" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="140,73,0,0" Name="google_symbol_txt" VerticalAlignment="Top" Width="130" Grid.Column="1" ToolTip="Enter symbol name " />
+                    <CheckBox Command="{Binding Path=IsCheckBoxClicked}" CommandParameter="ChkGoogleIEOD" Content=" Backfill Download" Height="16" HorizontalAlignment="Left" Margin="143,288,0,0" Name="backfill_download" VerticalAlignment="Top" Grid.Column="1" />
+                    <TextBlock Margin="592,509,21,6" Grid.Column="1">
+        <Hyperlink NavigateUri="http://shubhalabha.in/disclaimer/license/" RequestNavigate="Hyperlink_RequestNavigate">
+            <TextBlock Text=" license  "  />
+        </Hyperlink>
+    </TextBlock>
+                    <Button Content="Import backfill" Height="23" HorizontalAlignment="Left" Margin="85,328,0,0" Name="button1" VerticalAlignment="Top" Width="84" Grid.Column="1" Click="button1_Click_1" />
+                    <ListBox Height="200" HorizontalAlignment="Left" Margin="276,109,0,0" Name="list_rtsymbol" VerticalAlignment="Top" Width="274" Grid.Column="1" />
+                    <Button Content="Remove symbol" Height="23" HorizontalAlignment="Right" Margin="0,328,318,0" Name="remove_symbol" VerticalAlignment="Top" Width="92" Grid.Column="1" Click="remove_symbol_Click" />
+                    <ListBox Height="100" HorizontalAlignment="Left" Margin="278,134,0,0" Name="list_google_symbol" VerticalAlignment="Top" Width="120" Grid.Column="1" Visibility="Hidden" />
+                    <Label Content="Your data saved in  " Height="28" HorizontalAlignment="Left" Margin="3,107,0,0" Name="label17" VerticalAlignment="Top" Width="131" Grid.ColumnSpan="2" />
+                    <TextBlock Height="23" HorizontalAlignment="Left" Margin="14,357,0,0" Name="textBlock4" Text="Please use shubhaodin.xlsm for ODIN and sharekhantoami.xlsm for sharekhan/tradetiger" VerticalAlignment="Top" Foreground="#FFC32C2C" FontSize="12" Grid.Column="1" />
+                    <Label Content=" Select Google time frame " Height="28" HorizontalAlignment="Left" Margin="0,254,0,0" Name="label4" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="136" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="141,254,0,0" Name="google_time_frame" VerticalAlignment="Top" Width="129" Grid.Column="1" />
+                    <Button Content="Remove all symbol" Height="23" HorizontalAlignment="Left" Margin="395,328,0,0" Name="remove_all_symbol" VerticalAlignment="Top" Width="106" Grid.Column="1" Click="remove_all_symbol_Click" />
+                    <Label Content="Enter mapping symbol " Height="28" HorizontalAlignment="Left" Margin="276,73,0,0" Name="label23" VerticalAlignment="Top" Grid.Column="1" />
+                    <TextBox Height="23" HorizontalAlignment="Left" Margin="395,75,0,0" Name="mapping_symbol" VerticalAlignment="Top" Width="140" Grid.Column="1" />
+                    <ListBox Height="100" HorizontalAlignment="Left" Margin="415,136,0,0" Name="mapping_symbol_list" VerticalAlignment="Top" Width="120" Grid.Column="1" Visibility="Hidden" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Help" Name="tabItem2" Background="#FFE9E9F5">
+                <Grid Height="549"  Background="#FFE9E9F5" HorizontalAlignment="Left" Name="grid1" VerticalAlignment="Top" Width="701" >
+                    <Label Content="shubhart.format" Height="28" HorizontalAlignment="Left" Margin="9,31,0,0" Name="lbel10" VerticalAlignment="Top" Foreground="#FF12128D" />
+                    <Label Content="shubhaxls.format" Height="28" HorizontalAlignment="Left" Margin="8,90,0,0" Name="lbe10" VerticalAlignment="Top" Foreground="#FF12128D" />
+
+                    <Label Content="Shubhasharekhan.format" Height="28" HorizontalAlignment="Left" Margin="8,154,0,0" Name="label10" VerticalAlignment="Top" Foreground="#FF12128D" />
+                    <Label Content="FORMAT:- Ticker, Date_DMY, Time, Close, Volume, OpenInt, Skip" Height="28" HorizontalAlignment="Left" Margin="8,51,0,0" Name="label7" VerticalAlignment="Top" />
+                    <Label Content="SEPARATOR:- Space " Height="28" HorizontalAlignment="Left" Margin="8,69,0,0" Name="label11" VerticalAlignment="Top" />
+                    <Label Content="FORMAT:- Ticker, Date_DMY, Time, Close, Volume, OpenInt, Skip" Height="28" HorizontalAlignment="Left" Margin="8,113,0,0" Name="label12" VerticalAlignment="Top" />
+                    <Label Content="SEPARATOR:- ,(comma) " Height="28" HorizontalAlignment="Left" Margin="8,132,0,0" Name="label13" VerticalAlignment="Top" />
+                    <Label Content="FORMAT:- Date_DMY, Time, Open, High, Low, Close, Volume, Skip, Skip, Skip, Skip, Skip" Height="28" HorizontalAlignment="Left" Margin="9,175,0,0" Name="label14" VerticalAlignment="Top" />
+                    <Label Content="SEPARATOR:- ,(comma) " Height="28" HorizontalAlignment="Left" Margin="7,194,0,0" Name="label15" VerticalAlignment="Top" />
+                    <Label Content="Shubhabackfill.format" Foreground="#FF12128D" Height="28" HorizontalAlignment="Left" Margin="7,222,0,0" Name="label6" VerticalAlignment="Top" />
+                    <Label Content="FORMAT:- Ticker, Fullname, Date_DMY, Time, Open, High, Low, Close, Volume, OpenInt, Skip, Skip" Height="28" HorizontalAlignment="Left" Margin="6,242,0,0" Name="label16" VerticalAlignment="Top" />
+                    <Label Content="SEPARATOR:- ,(comma)" Height="28" HorizontalAlignment="Left" Margin="6,260,0,0" Name="label18" VerticalAlignment="Top" />
+                    <Label Content="shubhanest-now.format" Foreground="#FF12128D" Height="28" HorizontalAlignment="Left" Margin="9,294,0,0" Name="label19" VerticalAlignment="Top" />
+                    <Label Content="FORMAT:- Ticker, Date_DMY, Open, High, Low, Close, Volume" Height="28" HorizontalAlignment="Left" Margin="8,314,0,0" Name="label20" VerticalAlignment="Top" />
+                    <Label Content="SEPARATOR:- ,(comma)" Height="28" HorizontalAlignment="Left" Margin="8,332,0,0" Name="label21" VerticalAlignment="Top" />
+                    <Label Content="Please create all format file as shown below and set date format like dd-mm-yyyy" Foreground="#FFC11E1E" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label22" VerticalAlignment="Top" FontSize="12" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Contact us" Name="tabItem3" >
+                <Grid Background="#FFE9E9F5">
+                    <WebBrowser Name="wa" Source="http://shubhalabha.in/contact-us/" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.IsDeferredScrollingEnabled="False" Width="715" VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="3,-1,-15,2"></WebBrowser>
+
+                </Grid>
+                
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
